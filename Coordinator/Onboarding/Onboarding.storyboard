@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dAV-Fg-hj8">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Onboarding View Controller-->
+        <scene sceneID="ZdQ-RC-O1c">
+            <objects>
+                <viewController id="dAV-Fg-hj8" customClass="OnboardingViewController" customModule="Coordinator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g1a-ZS-Bgc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pW6-ha-jZW">
+                                <rect key="frame" x="125" y="318.5" width="125" height="30"/>
+                                <state key="normal" title="Finish Onboarding"/>
+                                <connections>
+                                    <action selector="finish:" destination="dAV-Fg-hj8" eventType="touchUpInside" id="9SQ-u8-mOF"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ONBOARDING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oF2-O4-u1n">
+                                <rect key="frame" x="116.5" y="20" width="142" height="27"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="oF2-O4-u1n" firstAttribute="top" secondItem="g3V-rb-bYj" secondAttribute="top" constant="20" id="Rrw-kK-v5s"/>
+                            <constraint firstItem="pW6-ha-jZW" firstAttribute="centerX" secondItem="g1a-ZS-Bgc" secondAttribute="centerX" id="SKA-KY-pQX"/>
+                            <constraint firstItem="pW6-ha-jZW" firstAttribute="centerY" secondItem="g1a-ZS-Bgc" secondAttribute="centerY" id="hqW-M8-b8N"/>
+                            <constraint firstItem="oF2-O4-u1n" firstAttribute="centerX" secondItem="g1a-ZS-Bgc" secondAttribute="centerX" id="mSp-JB-KuZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="g3V-rb-bYj"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FVd-Fk-YSC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="106" y="-228"/>
+        </scene>
+    </scenes>
+</document>
