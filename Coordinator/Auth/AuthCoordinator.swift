@@ -13,11 +13,11 @@ final class AuthCoordinator: BaseCoordinator {
     var finishFlow: (() -> Void)?
     
     private let dependency: AuthDependency
-    private let router: Router
+    private let appRouter: AppRouter
 
-    init(dependency: AuthDependency, router: Router) {
+    init(dependency: AuthDependency, appRouter: AppRouter) {
         self.dependency = dependency
-        self.router = router
+        self.appRouter = appRouter
     }
 
     override func start() {
@@ -28,6 +28,6 @@ final class AuthCoordinator: BaseCoordinator {
         guard let vc = UIStoryboard(name: "Auth", bundle: nil)
             .instantiateInitialViewController() as? AuthViewController else { return }
         vc.onFinish = finishFlow
-        router.setRootViewController(vc, hideBar: true)
+        appRouter.setRootViewController(vc)
     }
 }

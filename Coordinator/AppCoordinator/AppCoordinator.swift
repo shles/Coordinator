@@ -10,11 +10,11 @@ import Foundation
 
 final class AppCoordinator: BaseCoordinator {
 
-    private let router: Router
+    private let appRouter: AppRouter
     private let dependency: AppDependency
 
-    init(dependency: AppDependency, router: Router) {
-        self.router = router
+    init(dependency: AppDependency, appRouter: AppRouter) {
+        self.appRouter = appRouter
         self.dependency = dependency
     }
 
@@ -34,7 +34,7 @@ final class AppCoordinator: BaseCoordinator {
     }
 
     private func runAuthFlow(_ deepLink: DeepLink?) {
-        let coordinator = AuthCoordinator(dependency: dependency.authDependency, router: router)
+        let coordinator = AuthCoordinator(dependency: dependency.authDependency, appRouter: appRouter)
         coordinator.finishFlow = { [unowned self, unowned coordinator] in
             LaunchFlow.authenticated = true
             self.start(with: deepLink)
@@ -45,7 +45,7 @@ final class AppCoordinator: BaseCoordinator {
     }
 
     private func runOnboardingFlow(_ deepLink: DeepLink?) {
-        let coordinator = OnboardingCoordinator(dependency: dependency.onboardingDependency, router: router)
+        let coordinator = OnboardingCoordinator(dependency: dependency.onboardingDependency, appRouter: appRouter)
         coordinator.finishFlow = { [unowned self, unowned coordinator] in
             LaunchFlow.onboardingWasShown = true
             self.start(with: deepLink)
@@ -56,7 +56,7 @@ final class AppCoordinator: BaseCoordinator {
     }
 
     private func runTabsFlow(_ deepLink: DeepLink?) {
-        let coordinator = TabsCoordinator(dependency: dependency.tabsDependency, router: router)
+        let coordinator = TabsCoordinator(dependency: dependency.tabsDependency, appRouter: appRouter)
         attachChild(coordinator)
         coordinator.start(with: deepLink)
     }

@@ -10,17 +10,17 @@ import UIKit
 
 final class TabsCoordinator: BaseCoordinator {
 
-    private let router: Router
+    private let appRouter: AppRouter
     private let dependency: TabsDependency
 
-    init(dependency: TabsDependency, router: Router) {
+    init(dependency: TabsDependency, appRouter: AppRouter) {
         self.dependency = dependency
-        self.router = router
+        self.appRouter = appRouter
     }
 
     override func start(with deepLink: DeepLink?) {
         let tabBar = makeTabBar(with: deepLink)
-        router.setRootViewController(tabBar, hideBar: true)
+        appRouter.setRootViewController(tabBar)
     }
 
     private func makeTabBar(with deepLink: DeepLink?) -> TabBarController {

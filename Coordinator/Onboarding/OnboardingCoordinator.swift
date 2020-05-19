@@ -13,11 +13,11 @@ class OnboardingCoordinator: BaseCoordinator {
     var finishFlow: (() -> Void)?
 
     private let dependency: OnboardingDependency
-    private let router: Router
+    private let appRouter: AppRouter
 
-    init(dependency: OnboardingDependency, router: Router) {
+    init(dependency: OnboardingDependency, appRouter: AppRouter) {
         self.dependency = dependency
-        self.router = router
+        self.appRouter = appRouter
     }
 
     override func start() {
@@ -28,6 +28,6 @@ class OnboardingCoordinator: BaseCoordinator {
         guard let vc = UIStoryboard(name: "Onboarding", bundle: nil)
             .instantiateInitialViewController() as? OnboardingViewController else { return }
         vc.onFinish = finishFlow
-        router.setRootViewController(vc, hideBar: true)
+        appRouter.setRootViewController(vc)
     }
 }

@@ -35,6 +35,7 @@
 		E7C504222472715A00DD9D49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C504212472715A00DD9D49 /* AppDelegate.swift */; };
 		E7C5042B2472715E00DD9D49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7C5042A2472715E00DD9D49 /* Assets.xcassets */; };
 		E7C5042E2472715E00DD9D49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7C5042C2472715E00DD9D49 /* LaunchScreen.storyboard */; };
+		E7CA387F2473C454006E5106 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CA387E2473C454006E5106 /* AppRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		E7C5042A2472715E00DD9D49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7C5042D2472715E00DD9D49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7C5042F2472715E00DD9D49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7CA387E2473C454006E5106 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				E73437A12472720000B33F3B /* BaseCoordinator.swift */,
+				E7CA387E2473C454006E5106 /* AppRouter.swift */,
 				E73437A02472720000B33F3B /* Router.swift */,
 				E73437A82472720C00B33F3B /* DeepLink.swift */,
 			);
@@ -308,6 +311,7 @@
 				E78AA23224727AF100CEA05D /* ItemRepository.swift in Sources */,
 				E73161282472730900C09867 /* OnboardingViewController.swift in Sources */,
 				E7316133247275A900C09867 /* FeedDependency.swift in Sources */,
+				E7CA387F2473C454006E5106 /* AppRouter.swift in Sources */,
 				E7316130247274A800C09867 /* TabBarController.swift in Sources */,
 				E73437AB2472720C00B33F3B /* AppDependency.swift in Sources */,
 				E73437AD2472720C00B33F3B /* LaunchFlow.swift in Sources */,

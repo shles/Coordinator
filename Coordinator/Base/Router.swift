@@ -28,11 +28,6 @@ final class Router {
 
     func push(_ controller: UIViewController, animated: Bool = true,
               hideBottomBar: Bool = false, completion: (() -> Void)? = nil) {
-        if controller is UINavigationController {
-            assertionFailure("UINavigationController in UINavigationController stack not allowed")
-            return
-        }
-
         if let completion = completion {
             completions[controller] = completion
         }
