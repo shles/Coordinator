@@ -10,7 +10,7 @@ import UIKit
 
 final class Router {
 
-    private weak var rootController: UINavigationController?
+    private let rootController: UINavigationController
     private var completions: [UIViewController : () -> Void]
 
     init(rootController: UINavigationController) {
@@ -19,11 +19,11 @@ final class Router {
     }
 
     func present(_ controller: UIViewController, animated: Bool = true) {
-        rootController?.present(controller, animated: animated, completion: nil)
+        rootController.present(controller, animated: animated, completion: nil)
     }
 
     func dismiss(animated: Bool = true, completion: (() -> Void)? = nil) {
-        rootController?.dismiss(animated: animated, completion: completion)
+        rootController.dismiss(animated: animated, completion: completion)
     }
 
     func push(_ controller: UIViewController, animated: Bool = true,
@@ -37,22 +37,22 @@ final class Router {
             completions[controller] = completion
         }
         controller.hidesBottomBarWhenPushed = hideBottomBar
-        rootController?.pushViewController(controller, animated: animated)
+        rootController.pushViewController(controller, animated: animated)
     }
 
     func pop(animated: Bool = true) {
-        if let controller = rootController?.popViewController(animated: animated) {
+        if let controller = rootController.popViewController(animated: animated) {
             runCompletion(for: controller)
         }
     }
 
     func setRootViewController(_ controller: UIViewController, hideBar: Bool = false) {
-        rootController?.setViewControllers([controller], animated: false)
-        rootController?.isNavigationBarHidden = hideBar
+        rootController.setViewControllers([controller], animated: false)
+        rootController.isNavigationBarHidden = hideBar
     }
 
     func popToRootViewController(animated: Bool = true) {
-        if let controllers = rootController?.popToRootViewController(animated: animated) {
+        if let controllers = rootController.popToRootViewController(animated: animated) {
             controllers.forEach { controller in
                 runCompletion(for: controller)
             }

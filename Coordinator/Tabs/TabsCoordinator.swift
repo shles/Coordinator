@@ -45,7 +45,7 @@ final class TabsCoordinator: BaseCoordinator {
             guard navController.viewControllers.isEmpty else { return }
             let coordinator = FeedCoordinator(dependency: self.dependency.feedDependency,
                                               router: Router(rootController: navController))
-            self.addDependency(coordinator)
+            self.attachChild(coordinator)
             coordinator.start(with: deepLink)
         }
     }

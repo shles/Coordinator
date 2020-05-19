@@ -8,9 +8,9 @@
 
 import Foundation
 
-class BaseCoordinator: Coordinator {
+class BaseCoordinator {
 
-    var childCoordinators: [Coordinator] = []
+    private var childCoordinators: [BaseCoordinator] = []
 
     func start() {
         start(with: nil)
@@ -18,22 +18,26 @@ class BaseCoordinator: Coordinator {
 
     func start(with deepLink: DeepLink?) { }
 
-    func addDependency(_ coordinator: Coordinator) {
-        guard !childCoordinators.contains(where: { $0 === coordinator }) else { return }
+    func attachChild(_ coordinator: BaseCoordinator) {
+        if childCoordinators.contains(where: { $0 === coordinator }) { return }
         childCoordinators.append(coordinator)
     }
 
-    func removeDependency(_ coordinator: Coordinator?) {
-        guard childCoordinators.isEmpty == false, let coordinator = coordinator else { return }
+    func detachChild(_ coordinator: BaseCoordinator) {
+        if childCoordinators.isEmpty { return }
 
-        if let coordinator = coordinator as? BaseCoordinator, !coordinator.childCoordinators.isEmpty {
+        if !coordinator.childCoordinators.isEmpty {
             coordinator.childCoordinators
                 .filter({ $0 !== coordinator })
-                .forEach({ coordinator.removeDependency($0) })
+                .forEach({ coordinator.detachChild($0) })
         }
         for (index, element) in childCoordinators.enumerated() where element === coordinator {
             childCoordinators.remove(at: index)
             break
         }
+    }
+
+    func detachAllChilds() {
+        childCoordinators.removeAll()
     }
 }

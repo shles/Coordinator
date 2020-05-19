@@ -23,7 +23,6 @@
 		E7316142247278C900C09867 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7316141247278C900C09867 /* ItemViewController.swift */; };
 		E73437A32472720000B33F3B /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73437A02472720000B33F3B /* Router.swift */; };
 		E73437A42472720000B33F3B /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73437A12472720000B33F3B /* BaseCoordinator.swift */; };
-		E73437A52472720000B33F3B /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73437A22472720000B33F3B /* Coordinator.swift */; };
 		E73437AB2472720C00B33F3B /* AppDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73437A72472720C00B33F3B /* AppDependency.swift */; };
 		E73437AC2472720C00B33F3B /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73437A82472720C00B33F3B /* DeepLink.swift */; };
 		E73437AD2472720C00B33F3B /* LaunchFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73437A92472720C00B33F3B /* LaunchFlow.swift */; };
@@ -54,7 +53,6 @@
 		E7316141247278C900C09867 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		E73437A02472720000B33F3B /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		E73437A12472720000B33F3B /* BaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
-		E73437A22472720000B33F3B /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		E73437A72472720C00B33F3B /* AppDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDependency.swift; sourceTree = "<group>"; };
 		E73437A82472720C00B33F3B /* DeepLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeepLink.swift; sourceTree = "<group>"; };
 		E73437A92472720C00B33F3B /* LaunchFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchFlow.swift; sourceTree = "<group>"; };
@@ -159,7 +157,6 @@
 		E73437B02472724E00B33F3B /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				E73437A22472720000B33F3B /* Coordinator.swift */,
 				E73437A12472720000B33F3B /* BaseCoordinator.swift */,
 				E73437A02472720000B33F3B /* Router.swift */,
 				E73437A82472720C00B33F3B /* DeepLink.swift */,
@@ -303,7 +300,6 @@
 				E73437A32472720000B33F3B /* Router.swift in Sources */,
 				E731613C2472760100C09867 /* FeedCoordinator.swift in Sources */,
 				E731612A2472734B00C09867 /* TabsDependency.swift in Sources */,
-				E73437A52472720000B33F3B /* Coordinator.swift in Sources */,
 				E7316142247278C900C09867 /* ItemViewController.swift in Sources */,
 				E73161262472730900C09867 /* OnboardingCoordinator.swift in Sources */,
 				E73161402472777C00C09867 /* FeedViewController.swift in Sources */,
